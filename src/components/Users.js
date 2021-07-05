@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Users extends Component {
   render() {
+    const { 
+      greetingsMessage = 'Hi There',
+      match: { params: { id }} 
+    } = this.props
     return (
       <div>
         <h2>Users</h2>
-        <p> My awesome Users component </p>
-        <Link to='/'>
-          Voltar para Home
-        </Link>
+        <p>{`${greetingsMessage} User ${id}`}, this is my awesome Users component</p>
       </div>
     );
   }
